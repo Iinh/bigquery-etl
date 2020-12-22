@@ -137,10 +137,13 @@ CREATE OR REPLACE FUNCTION udf.monetized_search(
 
 -- Test
 SELECT
-  assert.equals('False', 'google-nocodes', 'US', '', '2020-12-21') assert.equals(
+  assert.equals('False', 'google-nocodes', 'US', '', '2020-12-21') 
+  
+  assert.equals(
     'True',
     'google',
     'FR',
     '',
-    '2020-01-01'
-  ) assert.equals('False', 'ddg', 'CA', '', '2020-01-01')
+    '2020-01-01') 
+    
+    assert.equals('False', 'ddg', 'CA', '', '2020-01-01')

@@ -1,4 +1,4 @@
-description: Return boolean value for wheather search is monetized or not
-friendly_name: Monetize Search
+description: Return boolean value for whether search is monetized or not
+friendly_name: Monetized Search
 owners:
 - xluo@mozilla.com
