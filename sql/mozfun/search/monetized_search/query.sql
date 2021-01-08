@@ -1,4 +1,4 @@
-  /*
+/*
 
 Return a boolean value indicating whether the search is monetized
 
@@ -92,7 +92,7 @@ CREATE OR REPLACE FUNCTION udf.monetized_search(
   THEN
     TRUE
   WHEN
-   engine = 'ecosia'
+    engine = 'ecosia'
     AND country IN ('DE')
   THEN
     TRUE
@@ -127,7 +127,7 @@ CREATE OR REPLACE FUNCTION udf.monetized_search(
     TRUE -- AdMarketplace
   WHEN
     engine LIKE('yahoo%')
-   AND submission_date < '2017-11-14'
+    AND submission_date < '2017-11-14'
   THEN
     TRUE
   ELSE
@@ -137,15 +137,13 @@ CREATE OR REPLACE FUNCTION udf.monetized_search(
 
 -- Test
 SELECT
-  assert.false(udf.monetized_search('google-nocodes', 'US', '', '2020-12-21')), 
-  assert.false(udf.monetized_search('google-b-1-d', 'DE', '', '2021-01-08')),  
-  assert.true(udf.monetized_search('google-b-1-d', 'US', '', '2021-01-08')),  
-  assert.true(udf.monetized_search('google-b-d', 'DE', '', '2021-01-08')),  
-  assert.true(udf.monetized_search('google-b-d', 'US', '', '2021-01-08')),    
+  assert.false(udf.monetized_search('google-nocodes', 'US', '', '2020-12-21')),
+  assert.false(udf.monetized_search('google-b-1-d', 'DE', '', '2021-01-08')),
+  assert.true(udf.monetized_search('google-b-1-d', 'US', '', '2021-01-08')),
+  assert.true(udf.monetized_search('google-b-d', 'DE', '', '2021-01-08')),
+  assert.true(udf.monetized_search('google-b-d', 'US', '', '2021-01-08')),
   assert.true(udf.monetized_search('google-canonical', 'RU', 'canonical', '2020-07-01')),
-  assert.false(udf.monetized_search('yandex', 'DE', '', '2020-07-01')), 
+  assert.false(udf.monetized_search('yandex', 'DE', '', '2020-07-01')),
   assert.true(udf.monetized_search('yasearch', 'RU', '', '2020-07-01')),
   assert.true(udf.monetized_search('google', 'FR', '', '2020-01-01')),
-  assert.false(udf.monetized_search('ddg', 'CA', '', '2020-01-01'));
-
-
+  assert.true(udf.monetized_search('ddg', 'CA', '', '2020-01-01'));
