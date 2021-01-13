@@ -1,0 +1,9 @@
+description: Please provide a description for the query
+friendly_name: Attributed Windows Desktop Funnel New Profiles
+labels:
+  incremental: true
+owners:
+- example@mozilla.com
+scheduling:
+  dag_name: bqetl_attributed_windows_desktop_funnel
+  task_name: telemetry_derived__attr_win_desktop_funnel_new_profiles__v1

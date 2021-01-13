@@ -1,0 +1,10 @@
+description: Attributed downloads of Firefox on Windows from non-Firefox Browsers
+friendly_name: Attributed Windows Desktop Funnel Sessions
+labels:
+  incremental: true
+owners:
+- shong@mozilla.com
+- wlachance@mozilla.com
+scheduling:
+  dag_name: bqetl_attributed_windows_desktop_funnel
+  task_name: telemetry_derived__attr_windows_desktop_funnel_sessions___v1
