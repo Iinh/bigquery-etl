@@ -3,7 +3,7 @@
 Return a boolean value indicating whether the search is monetized
 
 */
-CREATE OR REPLACE FUNCTION udf.monetized_search(
+CREATE OR REPLACE FUNCTION search.monetized_search(
   engine STRING,
   country STRING,
   distribution_id STRING,
